@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('condo/index');
+    return redirect('admin/condos');
 });
 
 Auth::routes();
