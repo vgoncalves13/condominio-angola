@@ -29,7 +29,7 @@ class CondoController extends Controller
     public function create()
     {
         $cities = DB::table('cities')->pluck('city','id');
-        return view('condo/create')->with(compact('cities'));
+        return view('condo.create')->with(compact('cities'));
     }
 
     /**
@@ -65,9 +65,11 @@ class CondoController extends Controller
      * @param  \App\Models\Condo  $condo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Condo $condo)
+    public function edit($id)
     {
-        //
+        $condo = Condo::findOrfail($id);
+        $cities = DB::table('cities')->pluck('city','id');
+        return view('condo.edit')->with(compact('condo','cities'));
     }
 
     /**
@@ -77,9 +79,14 @@ class CondoController extends Controller
      * @param  \App\Models\Condo  $condo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Condo $condo)
+    public function update(Request $request, $id)
     {
-        //
+        $condo = Condo::findOrfail($id);
+        $condo->fill($request->all())->save();
+        $condo->address->fill($request->all())->save();
+        Session::flash('message',__('message.condo_updated'));
+        Session::flash('alert-class', 'alert-success');
+        return back();
     }
 
     /**

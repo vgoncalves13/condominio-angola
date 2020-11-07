@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('admin/condos', App\Http\Controllers\CondoController::class);
+Route::get('admin/residences/create/{condo_id}', 'App\Http\Controllers\ResidenceController@create')->name('residences.create');
+Route::post('admin/residences/store','App\Http\Controllers\ResidenceController@store')->name('residences.store');
