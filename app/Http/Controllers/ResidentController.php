@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Residence;
+use App\Models\Resident;
 use Illuminate\Http\Request;
 
-class ResidenceController extends Controller
+class ResidentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,9 +22,9 @@ class ResidenceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($condo_id)
+    public function create()
     {
-        return view('residence.create')->with(compact('condo_id'));
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class ResidenceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Residence  $residence
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function show(Residence $residence)
+    public function show(Resident $resident)
     {
         //
     }
@@ -52,10 +52,10 @@ class ResidenceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Residence  $residence
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function edit(Residence $residence)
+    public function edit(Resident $resident)
     {
         //
     }
@@ -64,10 +64,10 @@ class ResidenceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Residence  $residence
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Residence $residence)
+    public function update(Request $request, Resident $resident)
     {
         //
     }
@@ -75,10 +75,10 @@ class ResidenceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Residence  $residence
+     * @param  \App\Models\Resident  $resident
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Residence $residence)
+    public function destroy(Resident $resident)
     {
         //
     }

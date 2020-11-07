@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Residence extends Model
+class Resident extends Model
 {
     use HasFactory;
 
-    public function condos()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Condos');
+        return $this->hasOne('App\Models\User');
     }
 }

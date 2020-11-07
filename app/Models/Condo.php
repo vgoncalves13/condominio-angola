@@ -10,11 +10,16 @@ class Condo extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','address_id','email'];
+
     public function address()
     {
         return $this->hasOne('App\Models\Address');
     }
 
-    protected $fillable = ['name','address_id','email'];
+    public function residences()
+    {
+        return $this->hasMany('App\Models\Residence');
+    }
 
 }

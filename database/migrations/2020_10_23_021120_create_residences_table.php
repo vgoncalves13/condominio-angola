@@ -15,6 +15,11 @@ class CreateResidencesTable extends Migration
     {
         Schema::create('residences', function (Blueprint $table) {
             $table->id();
+            $table->string('complement');
+            $table->unsignedBigInteger('resident_id')->nullable();
+            $table->foreign('resident_id')->references('id')->on('residents');
+            $table->unsignedBigInteger('condo_id');
+            $table->foreign('condo_id')->references('id')->on('condos');
             $table->timestamps();
         });
     }
