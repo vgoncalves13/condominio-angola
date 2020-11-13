@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResidencesTable extends Migration
+class CreateFamiliarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateResidencesTable extends Migration
      */
     public function up()
     {
-        Schema::create('residences', function (Blueprint $table) {
+        Schema::create('familiars', function (Blueprint $table) {
             $table->id();
-            $table->string('complement');
+            $table->string('nome');
+            $table->string('parentesco');
+            $table->unsignedBigInteger('idade');
             $table->unsignedBigInteger('resident_id')->nullable();
             $table->foreign('resident_id')->references('id')->on('users');
-            $table->unsignedBigInteger('condo_id');
-            $table->foreign('condo_id')->references('id')->on('condos');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateResidencesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('residences');
+        Schema::dropIfExists('familiars');
     }
 }

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Residence;
+use App\Models\Resident;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class ResidenceController extends Controller
 {
@@ -35,7 +39,14 @@ class ResidenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create_user($request);
+        $resident = new Resident();
+        $resident->user()->associate($user);
+
+        $residence = Residence::create($request->all());
+        Session::flash('message',__('message.residence_created'));
+        Session::flash('alert-class', 'alert-success');
+        return redirect()->route('condos.show',$request->condo_id);
     }
 
     /**

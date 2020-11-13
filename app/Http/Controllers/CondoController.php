@@ -55,7 +55,7 @@ class CondoController extends Controller
      */
     public function show($id)
     {
-        $condo = Condo::with('address.city')->findOrfail($id);
+        $condo = Condo::with('address.city','residences')->findOrfail($id);
         return view('condo.show')->with(compact('condo'));
     }
 

@@ -28,6 +28,21 @@
                 <div class="row">
                     <div class="col-12">
                     <a class="btn btn-flat btn-info" href="{{route('residences.create',$condo->id)}}">Adicionar residência</a>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table">
+                            <th>Complemento</th>
+                            <th>Nome do responsável</th>
+                            <th>Documento</th>
+                                @foreach ($residences as $residence)
+                                    <td>{{$residence->complement}}</td>    
+                                    <td>{{$residence->resident->user->name}}</td>
+                                    <td>{{$residence->resident->document}}</td>
+                                @endforeach
+                        </table>
                     </div>
                 </div>
             </div>
