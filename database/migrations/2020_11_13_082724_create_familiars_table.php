@@ -15,9 +15,9 @@ class CreateFamiliarsTable extends Migration
     {
         Schema::create('familiars', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('parentesco');
-            $table->unsignedBigInteger('idade');
+            $table->string('name');
+            $table->string('relationship');
+            $table->unsignedBigInteger('age');
             $table->unsignedBigInteger('resident_id')->nullable();
             $table->foreign('resident_id')->references('id')->on('users');
             $table->timestamps();
