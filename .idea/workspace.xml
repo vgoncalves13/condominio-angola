@@ -16,7 +16,13 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c320c04-ddfe-41d2-8ff4-7190232916bc" name="Default Changelist" comment="" />
@@ -158,7 +164,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/condo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cbpr" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -187,6 +193,7 @@
       <workItem from="1600861210311" duration="751000" />
       <workItem from="1601383033739" duration="2254000" />
       <workItem from="1603405389357" duration="1665000" />
+      <workItem from="1604720006579" duration="2855000" />
     </task>
     <servers />
   </component>
@@ -198,13 +205,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1010" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604720774239">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1010" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1604720774239" />
+    <state x="420" y="278" key="FileChooserDialogImpl" timestamp="1604721584733">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="420" y="278" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1604721584733" />
     <state x="781" y="165" key="SettingsEditor" timestamp="1600861615412">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
