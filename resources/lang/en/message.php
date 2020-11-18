@@ -18,5 +18,7 @@ return [
     'product_updated' => 'Product updated successfully',
     'status_created' => 'Status created successfully',
     'status_updated' => 'Status updated successfully',
+    'residence_created' => 'Residencia criada com sucesso',
+    'residence_updated' => 'Residencia atualizada com sucesso',
 
 ];

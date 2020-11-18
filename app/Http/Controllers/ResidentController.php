@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resident;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ResidentController extends Controller
@@ -35,7 +36,15 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user = User::create_user($request);
+        $resident = new Resident();    
+        $resident->user_id = $user->id;
+        $resident->birth_date = $request->birth_date;
+        $resident->document = $request->document;
+        
+        $resident->save();
+
     }
 
     /**
