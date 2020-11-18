@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Resident extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['document', 'birth_date'];
 
     public function user()
     {
@@ -18,6 +21,5 @@ class Resident extends Model
     {
         return $this->hasMany('App\Models\Familiar');
     }
-
 
 }

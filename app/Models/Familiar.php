@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class familiar extends Model
 {
-    protected $fillable = ['nome', 'parentesco', 'idade', 'resident_id'];
+    use HasFactory;
+
+    protected $fillable = ['name', 'relationship', 'age', 'resident_id'];
 
     public function resident()
     {

@@ -15,7 +15,7 @@ class CreateResidentsTable extends Migration
     {
         Schema::create('residents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->date('birth_date');
             $table->string('document');
