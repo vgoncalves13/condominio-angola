@@ -2,18 +2,19 @@
 
 namespace Database\Factories;
 
+
+use App\Models\Address;
 use App\Models\Condo;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
-class CondoFactory extends Factory
+class AddressFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Condo::class;
+    protected $model = Address::class;
 
     /**
      * Define the model's default state.
@@ -23,8 +24,12 @@ class CondoFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'condo_id' => Condo::factory(),
+            'address' => $this->faker->address,
+            'address2' => $this->faker->randomNumber(5),
+            'district' => $this->faker->city,
+            'city_id' => $this->faker->numberBetween(1,25),
+            'postal_code' => $this->faker->randomNumber(8),
         ];
     }
 }
