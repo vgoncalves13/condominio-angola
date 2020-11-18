@@ -17,7 +17,8 @@ class CreateCarsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('resident_id')->nullable();
             $table->foreign('resident_id')->references('id')->on('users');
-            $table->unsignedBigInteger('number_cars')->nullable();
+            $table->string('model');
+            $table->string('board');
             $table->timestamps();
         });
     }

@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cars extends Model
 {
-    protected $fillable = ['number_cars', 'resident_id'];
+    use HasFactory;
+    
+    protected $fillable = ['resident_id','model', 'board'];
 
     public function residence()
     {
