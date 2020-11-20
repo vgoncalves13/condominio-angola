@@ -7,6 +7,7 @@ use App\Models\Resident;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 
 class ResidenceController extends Controller
@@ -42,8 +43,14 @@ class ResidenceController extends Controller
         $user = User::create_user($request);
         $resident = new Resident();
         $resident->user()->associate($user);
+        $resident->fill($request->all());
+        $resident->save();
 
-        $residence = Residence::create($request->all());
+        $residence = new Residence();
+        $residence->resident()->associate($resident);
+        $residence->fill($request->all());
+        $residence->save();
+
         Session::flash('message',__('message.residence_created'));
         Session::flash('alert-class', 'alert-success');
         return redirect()->route('condos.show',$request->condo_id);
@@ -55,20 +62,21 @@ class ResidenceController extends Controller
      * @param  \App\Models\Residence  $residence
      * @return \Illuminate\Http\Response
      */
-    public function show(Residence $residence)
+    public function show($id)
     {
-        //
+        $residence = Residence::findOrfail($id);
+        return view('residence.show')->with(compact('residence'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Residence  $residence
      * @return \Illuminate\Http\Response
      */
-    public function edit(Residence $residence)
+    public function edit($id)
     {
-        //
+        $residence = Residence::findOrfail($id);
+        return view('residence.edit')->with(compact('residence'));
     }
 
     /**
@@ -78,11 +86,14 @@ class ResidenceController extends Controller
      * @param  \App\Models\Residence  $residence
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Residence $residence)
+    public function update(Request $request, $id)
     {
-        //
+        $residence = Residence::findOrfail($id);
+        $residence->fill($request->all())->save();
+        Session::flash('message',__('message.residence_updated'));
+        Session::flash('alert-class', 'alert-success');
+        return redirect()->route('residences.show',$id);
     }
-
     /**
      * Remove the specified resource from storage.
      *

@@ -19,6 +19,7 @@ class CreateResidentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->date('birth_date');
             $table->string('document');
+            $table->string('username');
             $table->timestamps();
         });
     }

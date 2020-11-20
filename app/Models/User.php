@@ -53,7 +53,7 @@ class User extends Authenticatable
         return User::create([
             'name' => $request['name'],
             'email' => $request['email'],
-            'password' => Hash::make($request['password']),
+            'password' => Hash::make('123mudar'),
         ]);
 
     }

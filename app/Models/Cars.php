@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Cars extends Model
 {
@@ -15,4 +16,11 @@ class Cars extends Model
     {
         return $this->belongsTo('App\Models\Residence');
     }
+
+    public function createCar(Request $request)
+    {
+        $car = $this->create($request->all());
+        return $car;
+    }
 }
+

@@ -43,6 +43,10 @@
                                         <td>{{$residence->complement}}</td>    
                                         <td>@isset($residence->resident->user->name){{$residence->resident->user->name}}@endisset</td>
                                         <td>@isset($residence->resident->document){{$residence->resident->document}}@endisset</td>
+                                        <td>
+                                        <a class="btn btn-flat btn-info btn-sm" href="{{route('residences.show',$residence->id)}}">Ver</a>
+                                        <a class="btn btn-flat btn-info btn-sm" href="{{route('residences.edit',$residence->id)}}">Editar</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                         </table>

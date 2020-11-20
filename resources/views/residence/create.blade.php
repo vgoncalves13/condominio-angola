@@ -26,14 +26,14 @@
                             <input name="condo_id" type="hidden" value="{{$condo_id}}">
                         </div>
                         <div class="form-group">
-                            <label for="name">Nome responsável</label>
+                            <label for="name">Nome do responsável</label>
                             <input name="name" type="text" class="form-control" 
-                                id="name" placeholder="Nome responsável"
+                                id="name" placeholder="Nome do responsável"
                             >
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input name="email" type="text" class="form-control" 
+                            <input name="email" type="email" class="form-control" 
                                 id="email" placeholder="E-mail"
                             >
                         </div>
@@ -45,9 +45,9 @@
                             >
                         </div>
                         <div class="form-group">
-                            <label for="user">Usuário</label>
-                            <input name="user" type="text" class="form-control" 
-                                id="user" placeholder="Usuário"
+                            <label for="username">Usuário</label>
+                            <input name="username" type="text" class="form-control" 
+                                id="username" placeholder="Usuário"
                             >
                         </div>
                         <div class="form-group">

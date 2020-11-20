@@ -16,7 +16,7 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('resident_id')->nullable();
-            $table->foreign('resident_id')->references('id')->on('users');
+            $table->foreign('resident_id')->references('user_id')->on('residents');
             $table->string('model');
             $table->string('board');
             $table->timestamps();

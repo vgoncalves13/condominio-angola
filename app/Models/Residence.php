@@ -9,7 +9,7 @@ class Residence extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['complement', 'condo_id'];
+    protected $fillable = ['complement', 'condo_id', 'number_cars'];
     
     public function condos()
     {
