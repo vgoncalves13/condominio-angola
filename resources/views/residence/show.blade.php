@@ -23,8 +23,8 @@
                             <p><strong>Usuário: </strong> {{$residence->resident->username}}</p>
                             <p><strong>Data de Nascimento: </strong> {{$residence->resident->birth_date}}</p>
                             <p><strong>Viaturas: </strong> {{$residence->number_cars}}</p>
-                            <p><strong>Familiares: </strong> {{$residence->resident->birth_date}}</p>
-                            <p><strong>Funcionários: </strong> {{$residence->resident->birth_date}}</p>
+                            <p><strong>Familiares: </strong> 
+                            <p><strong>Funcionários: </strong> 
                         </div>
                     </div>
                 </div>

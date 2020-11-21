@@ -11,13 +11,13 @@ class CarsController extends Controller
 
     function __construct(Cars $car)
     {
-        $this->car = new Cars();
+        $this->$car = new Cars();
     }
 
     public function store(Request $request)
     {
-        $cars = new Cars();
-        $cars->fill($request->all());
-        $cars->save();
+        $car = new Cars();
+        $car->fill($request->all());
+        $car->save();
     }
 }
