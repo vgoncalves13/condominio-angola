@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'document',
+        'birth_date',
     ];
 
     /**
@@ -53,8 +55,23 @@ class User extends Authenticatable
         return User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'document' => $request['document'],
+            'birth_date' => $request['birth_date'],
             'password' => Hash::make('123mudar'),
         ]);
-
     }
+
+    public static function createOwner(Request $request)
+    {
+        return User::create_user($request);
+    }
+
+    public static function haveResident(Request $request)
+    {
+        if(count($request) > 1){
+            return false;
+        } 
+        return true;
+    }
+
 }

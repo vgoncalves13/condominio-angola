@@ -15,10 +15,10 @@ class CreateCarsTable extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('resident_id')->nullable();
-            $table->foreign('resident_id')->references('user_id')->on('residents');
+            $table->unsignedBigInteger('residence_id');
+            $table->foreign('residence_id')->references('id')->on('residences');
             $table->string('model');
-            $table->string('board');
+            $table->string('car_plate');
             $table->timestamps();
         });
     }

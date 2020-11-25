@@ -73,6 +73,20 @@
                                 value="{{$residence->number_cars}}"
                                 >
                         </div>
+                        <div class="form-group">
+                            <label for="number_fam">Familiares</label>
+                            <input name="number_fam" type="number" class="form-control"  
+                                id="number_fam" min="0" 
+                                value="{{$residence->number_fam}}"
+                                >
+                        </div>
+                        <div class="form-group">
+                            <label for="number_emp">Funcionários</label>
+                            <input name="number_emp" type="number" class="form-control"  
+                                id="number_emp" min="0" 
+                                value="{{$residence->number_emp}}"
+                                >
+                        </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">

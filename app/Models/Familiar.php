@@ -18,10 +18,17 @@ class familiar extends Model
         return $this->belongsTo('App\Models\Resident');
     }
 
-    public function createFamiliar(Request $request)
+    public function createFamiliar(Request $request, $resident_id, $quantity = 1)
     {
-        $familiar = $this->create($request->all());
-        return $familiar;
+        for($i=0;$i<$quantity;$i++){
+            $familiar = new Familiar();
+            $familiar->name = $request->name[$i];
+            $familiar->age = $request->age[$i];
+            $familiar->relationship = $request->relationship[$i];
+            $familiar->resident_id = $resident_id;
+            $familiar->save();
+        }
+        
     }
-}
 
+}

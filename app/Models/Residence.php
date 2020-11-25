@@ -9,7 +9,7 @@ class Residence extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['complement', 'condo_id', 'number_cars'];
+    protected $fillable = ['complement', 'condo_id', 'owner_id',''];
     
     public function condos()
     {
@@ -23,6 +23,8 @@ class Residence extends Model
 
     public function cars()
     {
-        return $this->hasMany('App\Models\Cars');
+        return $this->hasMany('App\Models\Car');
     }
+
+
 }

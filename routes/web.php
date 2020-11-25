@@ -22,6 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('admin/employees', App\Http\Controllers\EmployeeController::class);
+Route::resource('admin/familiars', App\Http\Controllers\FamiliarController::class);
+Route::resource('admin/cars', App\Http\Controllers\CarController::class);
 Route::resource('admin/condos', App\Http\Controllers\CondoController::class);
 Route::resource('admin/residences', App\Http\Controllers\ResidenceController::class);
 Route::get('admin/residences/create/{condo_id}', 'App\Http\Controllers\ResidenceController@create')->name('residences.create');

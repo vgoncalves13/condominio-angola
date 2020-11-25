@@ -49,11 +49,16 @@ class ResidenceController extends Controller
         $residence = new Residence();
         $residence->resident()->associate($resident);
         $residence->fill($request->all());
-        $residence->save();
+        if($residence->save()){
+            $request->session()->put('number_cars', $request->number_cars);
+            $request->session()->put('number_fam', $request->number_fam);
+            $request->session()->put('number_emp', $request->number_emp);
+            $request->session()->put('residence_id', $residence->id);
+            $request->session()->put('resident_id', $residence->resident_id);
+            return redirect()->route('cars.create');
+        }
 
-        Session::flash('message',__('message.residence_created'));
-        Session::flash('alert-class', 'alert-success');
-        return redirect()->route('condos.show',$request->condo_id);
+        
     }
 
     /**

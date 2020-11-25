@@ -10,8 +10,6 @@ class Resident extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['document', 'birth_date', 'username'];
-
     public function user()
     {
         return $this->belongsTo('App\Models\User');
