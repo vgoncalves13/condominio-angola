@@ -22,4 +22,8 @@ class Condo extends Model
         return $this->hasMany('App\Models\Residence');
     }
 
+    public function file()
+    {
+        return $this->hasOne('App\Models\File');
+    }
 }

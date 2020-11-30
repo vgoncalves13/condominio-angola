@@ -22,10 +22,14 @@
                             <p><strong>Código Postal: </strong> {{$condo->address->postal_code}}</p>
                             <p><strong>Distrito: </strong> {{$condo->address->district}}</p>
                             <p><strong>Cidade: </strong> {{$condo->address->city->city}}</p>
+                            <p><strong></strong></p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-12">
+                    <a class="btn btn-flat btn-info" href="{{route('file.create',$condo->id)}}">Adicionar Logo</a>
+                    </div>
                     <div class="col-12">
                     <a class="btn btn-flat btn-info" href="{{route('residences.create',$condo->id)}}">Adicionar residência</a>
                     </div>
