@@ -26,4 +26,9 @@ class Condo extends Model
     {
         return $this->hasOne('App\Models\File');
     }
+
+    public function financial()
+    {
+        return $this->hasOne('App\Models\Financial');
+    }
 }

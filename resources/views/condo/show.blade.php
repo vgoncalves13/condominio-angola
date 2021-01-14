@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
-                            <p><strong>Nome condomínio:</strong> {{$condo->name}}</p>
+                            <p><strong>Nome condomínio: </strong> {{$condo->name}}</p>
                             <p><strong>Endereço: </strong> {{$condo->address->address}}</p>
                             <p><strong>Endereço 2: </strong> {{$condo->address->address2}}</p>
                             <p><strong>Código Postal: </strong> {{$condo->address->postal_code}}</p>
@@ -32,6 +32,12 @@
                     </div>
                     <div class="col-12">
                     <a class="btn btn-flat btn-info" href="{{route('residences.create',$condo->id)}}">Adicionar residência</a>
+                    </div>
+                    <div class="col-12">
+                    <a class="btn btn-flat btn-info" href="{{route('financial.create',$condo->id)}}"> Adicionar ao Financeiro</a>
+                    </div>
+                    <div>
+                    <a class="btn btn-flat btn-info btn-sm" href="{{route('financial.show',$condo->id)}}">Ver Finanças do Condomínio</a>
                     </div>
                 </div>
                 <div class="row">
