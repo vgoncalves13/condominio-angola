@@ -15,13 +15,12 @@ class CreateFinancialsTable extends Migration
     {
         Schema::create('financials', function (Blueprint $table) {
             $table->id();
-            $table->string('bill_month');
-            $table->string('bill_value');
-            $table->string('condo_percentage');
-            $table->string('bill_name');
-            $table->string('bill_path');
             $table->unsignedBigInteger('condo_id');
             $table->foreign('condo_id')->references('id')->on('condos');
+            $table->string('bill_name');
+            $table->string('bill_month');
+            $table->string('bill_value');
+            $table->string('bill_path');
             $table->timestamps();
         });
     }

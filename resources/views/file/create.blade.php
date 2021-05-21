@@ -18,8 +18,9 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="POST" action="{{route('file.store')}}" role="form" enctype="multipart/form-data">
+                <form method="POST" action="{{route('files.store')}}" role="form" enctype="multipart/form-data">
                     @csrf
+                    <input name="condo_id" type="hidden" value="{{$condo_id}}">
                     <input type="file" name="file" class="form-control">
                     <!-- /.card-body -->
                     <div class="card-footer">

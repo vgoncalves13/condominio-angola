@@ -57,7 +57,6 @@ class ResidenceController extends Controller
             $request->session()->put('resident_id', $residence->resident_id);
             return redirect()->route('cars.create');
         }
-
         
     }
 

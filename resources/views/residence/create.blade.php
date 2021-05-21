@@ -18,6 +18,32 @@
                 <form method="POST" action="{{route('residences.store')}}" role="form">
                     @csrf
                     <div class="card-body">
+                        <label>O responsável é:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="owner" value="{{$type = 'Proprietário'}}" checked>
+                            <label class="form-check-label" for="owner">
+                                <p>Proprietário</p>
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="type" id="tenant" value="{{$type = 'Inquilino'}}">
+                            <label class="form-check-label" for="tenant">
+                                <p>Inquilino</p>
+                            </label>
+                        </div>
+                        <label>A residência está:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="state" id="ocuppied" value="{{$state = 'OCUPADA'}}" checked>
+                            <label class="form-check-label" for="owner">
+                                <p>Ocupada</p>
+                            </label>
+                            </div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="radio" name="state" id="empty" value="{{$state = 'VAZIA'}}">
+                            <label class="form-check-label" for="empty">
+                                <p>Vazia</p>
+                            </label>
+                        </div>
                         <div class="form-group">
                             <label for="complement">Complemento</label>
                             <input name="complement" type="text" class="form-control" 
@@ -26,76 +52,34 @@
                             <input name="condo_id" type="hidden" value="{{$condo_id}}">
                         </div>
                         <div class="form-group">
-                            <label for="name">Nome do proprietário</label>
-                            <input name="name[]" type="text" class="form-control" 
-                                id="name" placeholder="Nome do proprietário"
+                            <label for="name">Nome</label>
+                            <input name="name" type="text" class="form-control" 
+                                id="name" placeholder="Nome"
                                  >
                         </div>
                         <div class="form-group">
-                            <label for="email">E-mail do proprietário</label>
-                            <input name="email[]" type="email" class="form-control" 
-                                id="email" placeholder="E-mail do proprietário"
+                            <label for="email">E-mail</label>
+                            <input name="email" type="email" class="form-control" 
+                                id="email" placeholder="E-mail"
                                  >
                         </div>
                         <div class="form-group">
-                            <label for="document">Documento do proprietário</label>
-                            <input name="document[]" type="text" class="form-control" 
-                                id="document" placeholder="Documento do proprietário"
+                            <label for="document">Documento</label>
+                            <input name="document" type="text" class="form-control" 
+                                id="document" placeholder="Documento"
                                  >
                         </div>
                         <div class="form-group">
-                            <label for="username">Usuário do proprietário</label>
-                            <input name="username[]" type="text" class="form-control" 
-                                id="username" placeholder="Usuário do proprietário"
+                            <label for="username">Usuário</label>
+                            <input name="username" type="text" class="form-control" 
+                                id="username" placeholder="Usuário"
                                  >
                         </div>
                         <div class="form-group">
-                            <label for="birth_date">Data de nascimento do proprietário</label>
-                            <input name="birth_date[]" type="date" class="form-control" 
+                            <label for="birth_date">Data de nascimento</label>
+                            <input name="birth_date" type="date" class="form-control" 
                                 id="birth_date"
                                  >
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Default radio
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Second default radio
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="tenant_name">Nome do inquilino</label>
-                            <input name="name[]" type="text" class="form-control" 
-                                id="tenant_name" placeholder="Nome do inquilino"
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="tenant_email">E-mail do inquilino</label>
-                            <input name="email[]" type="email" class="form-control" 
-                                id="tenant_email" placeholder="E-mail do inquilino"
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="tenant_document">Documento do inquilino</label>
-                            <input name="document[]" type="text" class="form-control" 
-                                id="tenant_document" placeholder="Documento do inquilino"
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="tenant_username">Usuário do inquilino</label>
-                            <input name="username[]" type="text" class="form-control" 
-                                id="tenant_username" placeholder="Usuário do inquilino"
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="tenant_birthdate">Data de nascimento do inquilino</label>
-                            <input name="birthdate[]" type="date" class="form-control" 
-                                id="tenant_birthdate"
-                            >
                         </div>
                         <div class="form-group">
                             <label for="number_cars">Viaturas</label>

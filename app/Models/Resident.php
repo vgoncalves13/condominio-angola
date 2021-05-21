@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 class Resident extends Model
 {
     use HasFactory;
+    
+    protected $fillable = ['username', 'user_id', 'type'];
+
 
     public function user()
     {

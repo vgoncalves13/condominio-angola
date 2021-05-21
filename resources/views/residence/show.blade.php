@@ -19,17 +19,19 @@
                             <p><strong>Complemento:</strong> {{$residence->complement}}</p>
                             <p><strong>Nome do responsável: </strong> {{$residence->resident->user->name}}</p>
                             <p><strong>E-mail: </strong> {{$residence->resident->user->email}}</p>
-                            <p><strong>Documento: </strong> {{$residence->resident->document}}</p>
+                            <p><strong>Documento: </strong> {{$residence->resident->user->document}}</p>
                             <p><strong>Usuário: </strong> {{$residence->resident->username}}</p>
-                            <p><strong>Data de Nascimento: </strong> {{$residence->resident->birth_date}}</p>
-                            <p><strong>Viaturas: </strong> {{$residence->number_cars}}</p>
-                            <p><strong>Familiares: </strong> {{$residence->number_fam}}</p>
-                            <p><strong>Funcionários: </strong> {{$residence->number_emp}}</p>
+                            <p><strong>Data de Nascimento: </strong> {{$residence->resident->user->birth_date}}</p>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                        <a class="btn btn-flat btn-info" >Finanças da Residência</a>
+                    </div>
+                </div>
                 </div>
                 <div class="card-header">
-                    <h3 class="card-title">Viaturas</h3>
+                    <h3 class="card-title"><p>Viaturas</p></h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -54,7 +56,7 @@
                     </div>
                 </div>
                 <div class="card-header">
-                    <h3 class="card-title">Familiares</h3>
+                    <h3 class="card-title"><p>Familiares</p></h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -81,7 +83,7 @@
                     </div>
                 </div>
                 <div class="card-header">
-                    <h3 class="card-title">Funcionários</h3>
+                    <h3 class="card-title"><p>Funcionários</p></h3>
                 </div>
                 <div class="card-body">
                     <div class="row">

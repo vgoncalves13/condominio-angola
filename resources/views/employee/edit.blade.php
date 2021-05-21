@@ -15,7 +15,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="POST" action="{{route('employees.update',$employee->resident_id)}}" role="form">
+                <form method="POST" action="{{route('employees.update',$employee->id)}}" role="form">
                     @csrf
                     @method('PUT')
                     <div class="card-body">

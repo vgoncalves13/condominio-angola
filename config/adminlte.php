@@ -255,6 +255,11 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Financeiro',
+            'url'  => 'admin/financials',
+            'icon' => 'fa fa-fw fa-briefcase',
+        ],
+        [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

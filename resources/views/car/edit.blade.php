@@ -15,7 +15,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="POST" action="{{route('cars.update',$car->residence_id)}}" role="form">
+                <form method="POST" action="{{route('cars.update',$car->id)}}" role="form">
                     @csrf
                     @method('PUT')
                     <div class="card-body">

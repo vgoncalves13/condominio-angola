@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
+use App\Models\Condo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -26,9 +27,9 @@ class FileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($condo_id)
     {
-        return view('file.create');
+        return view('file.create')->with(compact('condo_id'));
     }
 
     /**
@@ -39,19 +40,17 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'file' => 'required|file|mimes:jpg,jpeg,png|max:940',
-        ]);
+         File::UploadFile($request);
+         Session::flash('message',__('Adicionado com sucesso'));
     
-        $logo_name = time().'.'.$request->file->extension();
-               
-        $request->file->move(public_path('storage'), $logo_name);
+         return back();
 
-        $logo_path = 'public/storage/' . $logo_name;
-  
-        File::create(['logo_name' => $logo_name, 'logo_path' => $logo_path]);
-    
-        return back();
+    }
+
+
+    public function show()
+    {
+       //
     }
 
 }

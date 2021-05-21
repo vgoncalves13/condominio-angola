@@ -48,7 +48,7 @@
                             <input name="document" type="text" class="form-control" 
                                 id="document" 
                                 placeholder="Documento"
-                                value="{{$residence->resident->document}}"
+                                value="{{$residence->resident->user->document}}"
                                 >
                         </div>
                         <div class="form-group">
@@ -63,7 +63,7 @@
                             <label for="birth_date">Data de Nascimento</label>
                             <input name="birth_date" type="date" class="form-control" 
                                 id="birth_date" 
-                                value="{{$residence->resident->birth_date}}"
+                                value="{{$residence->resident->user->birth_date}}"
                                 >
                         </div>
                         <div class="form-group">

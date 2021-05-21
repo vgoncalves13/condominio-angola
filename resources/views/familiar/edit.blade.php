@@ -15,7 +15,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="POST" action="{{route('familiars.update',$familiar->resident_id)}}" role="form">
+                <form method="POST" action="{{route('familiars.update',$familiar->id)}}" role="form">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
