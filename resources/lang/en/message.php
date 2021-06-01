@@ -20,5 +20,7 @@ return [
     'status_updated' => 'Status updated successfully',
     'residence_created' => 'Residencia criada com sucesso',
     'residence_updated' => 'Residencia atualizada com sucesso',
+    'bill_created' => 'Conta cadastrada com sucesso',
+    'file_created' => 'Arquivo enviado com sucesso',
 
 ];

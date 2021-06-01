@@ -45,9 +45,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function resident()
+    public function familiars()
     {
-        return $this->hasOne('App\Models\Resident');
+        return $this->hasMany('App\Models\Familiar');
+    }
+
+    public function employees()
+    {
+        return $this->hasMany('App\Models\Employee');
+    }
+
+    public function rent()
+    {
+        return $this->hasOne('App\Models\Rent');
     }
 
     public static function create_user(Request $request)
@@ -61,17 +71,17 @@ class User extends Authenticatable
         ]);
     }
 
-    public static function createOwner(Request $request)
-    {
-        return User::create_user($request);
-    }
+//    public static function createOwner(Request $request)
+//    {
+//        return User::create_user($request);
+//    }
 
-    public static function haveResident(Request $request)
-    {
-        if(count($request) > 1){
-            return false;
-        } 
-        return true;
-    }
+//    public static function haveResident(Request $request)
+//    {
+//        if(count($request) > 1){
+//            return false;
+//        }
+//        return true;
+//    }
 
 }

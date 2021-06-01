@@ -38,6 +38,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
@@ -153,6 +156,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1huVxQF3q4U1q09sIVjNphi4Wk7" />
@@ -168,6 +172,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -194,6 +199,7 @@
       <workItem from="1601383033739" duration="2254000" />
       <workItem from="1603405389357" duration="1665000" />
       <workItem from="1604720006579" duration="2855000" />
+      <workItem from="1622498635152" duration="8166000" />
     </task>
     <servers />
   </component>
@@ -225,21 +231,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1010" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604720774239">
+    <state x="370" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622500764041">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1010" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1604720774239" />
-    <state x="420" y="278" key="FileChooserDialogImpl" timestamp="1604721584733">
+    <state x="370" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1622500764041" />
+    <state x="1035" y="96" width="938" height="768" key="find.popup" timestamp="1622511460386">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="420" y="278" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1604721584733" />
-    <state x="781" y="165" key="SettingsEditor" timestamp="1600861615412">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="781" y="165" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1600861615412" />
-    <state x="92" y="92" width="2376" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602161332778">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="92" y="92" width="2376" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1602161332778" />
+    <state x="1035" y="96" width="938" height="768" key="find.popup/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1622511460386" />
   </component>
 </project>

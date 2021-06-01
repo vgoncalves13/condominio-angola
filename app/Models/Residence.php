@@ -9,16 +9,16 @@ class Residence extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['complement', 'condo_id', 'user_id', 'resident_id', 'state'];
-    
+    protected $fillable = ['complement', 'condo_id', 'owner_id', 'occupied'];
+
     public function condos()
     {
         return $this->belongsTo('App\Models\Condos');
     }
 
-    public function resident()
+    public function owner()
     {
-        return $this->belongsTo('App\Models\Resident');
+        return $this->belongsTo('App\Models\Owner');
     }
 
     public function cars()

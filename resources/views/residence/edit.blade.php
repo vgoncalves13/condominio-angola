@@ -21,69 +21,69 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="complement">Complemento</label>
-                            <input name="complement" type="text" class="form-control" 
-                                id="complement" 
+                            <input name="complement" type="text" class="form-control"
+                                id="complement"
                                 placeholder="Complemento"
                                 value="{{$residence->complement}}"
                             >
                         </div>
                         <div class="form-group">
                             <label for="name">Nome do responsável</label>
-                            <input name="name" type="name" class="form-control" 
-                                id="name" 
+                            <input name="name" type="name" class="form-control"
+                                id="name"
                                 placeholder="Nome do responsável"
-                                value="{{$residence->resident->user->name}}"
+                                value="{{$residence->user->name}}"
                             >
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input name="email" type="email" class="form-control" 
-                                id="email" 
+                            <input name="email" type="email" class="form-control"
+                                id="email"
                                 placeholder="E-mail"
-                                value="{{$residence->resident->user->email}}"
+                                value="{{$residence->user->email}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="document">Documento</label>
-                            <input name="document" type="text" class="form-control" 
-                                id="document" 
+                            <input name="document" type="text" class="form-control"
+                                id="document"
                                 placeholder="Documento"
-                                value="{{$residence->resident->user->document}}"
+                                value="{{$residence->user->document}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="username">Usuário</label>
-                            <input name="username" type="text" class="form-control" 
-                                id="username" 
+                            <input name="username" type="text" class="form-control"
+                                id="username"
                                 placeholder="Usuário"
-                                value="{{$residence->resident->username}}"
+                                value="{{$residence->username}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Data de Nascimento</label>
-                            <input name="birth_date" type="date" class="form-control" 
-                                id="birth_date" 
-                                value="{{$residence->resident->user->birth_date}}"
+                            <input name="birth_date" type="date" class="form-control"
+                                id="birth_date"
+                                value="{{$residence->user->birth_date}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="number_cars">Viaturas</label>
-                            <input name="number_cars" type="number" class="form-control"  
+                            <input name="number_cars" type="number" class="form-control"
                                 id="number_cars" min="0" max="5"
                                 value="{{$residence->number_cars}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="number_fam">Familiares</label>
-                            <input name="number_fam" type="number" class="form-control"  
-                                id="number_fam" min="0" 
+                            <input name="number_fam" type="number" class="form-control"
+                                id="number_fam" min="0"
                                 value="{{$residence->number_fam}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="number_emp">Funcionários</label>
-                            <input name="number_emp" type="number" class="form-control"  
-                                id="number_emp" min="0" 
+                            <input name="number_emp" type="number" class="form-control"
+                                id="number_emp" min="0"
                                 value="{{$residence->number_emp}}"
                                 >
                         </div>

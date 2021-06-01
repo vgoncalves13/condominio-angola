@@ -13,12 +13,12 @@ class CreateResidentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('residents', function (Blueprint $table) {
+        Schema::create('rents', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('type');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('residence_id');
+            $table->foreign('residence_id')->references('id')->on('residences');
             $table->timestamps();
         });
     }

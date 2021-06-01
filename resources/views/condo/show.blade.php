@@ -23,7 +23,9 @@
                             <p><strong>Cidade: </strong> {{$condo->address->city->city}}</p>
                         </div>
                         <div class="col-12 col-md-3">
-                            <img width="200" height="200" src="/public/{{$condo->file->file_path}}">
+                            @isset($condo->file->file_path)
+                                <img width="200" height="200" src="/{{$condo->file->file_path}}">
+                            @endisset
                         </div>
                     </div>
                 </div>
@@ -45,7 +47,7 @@
                             </tr>
                                 @foreach ($condo->residences as $residence)
                                     <tr>
-                                        <td>{{$residence->complement}}</td>    
+                                        <td>{{$residence->complement}}</td>
                                         <td>@isset($residence->resident->user->name){{$residence->resident->user->name}}@endisset</td>
                                         <td>@isset($residence->resident->user->document){{$residence->resident->user->document}}@endisset</td>
                                         <td>

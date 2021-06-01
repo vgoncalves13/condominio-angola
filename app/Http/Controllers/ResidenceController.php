@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Residence;
-use App\Models\Resident;
+use App\Models\Rent;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -40,7 +40,7 @@ class ResidenceController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create_user($request);
+
         $resident = new Resident();
         $resident->user()->associate($user);
         $resident->fill($request->all());
@@ -54,10 +54,10 @@ class ResidenceController extends Controller
             $request->session()->put('number_fam', $request->number_fam);
             $request->session()->put('number_emp', $request->number_emp);
             $request->session()->put('residence_id', $residence->id);
-            $request->session()->put('resident_id', $residence->resident_id);
+            $request->session()->put('owner_id', $residence->owner_id);
             return redirect()->route('cars.create');
         }
-        
+
     }
 
     /**

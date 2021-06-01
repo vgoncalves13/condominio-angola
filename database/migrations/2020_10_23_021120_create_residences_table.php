@@ -18,9 +18,9 @@ class CreateResidencesTable extends Migration
             $table->string('complement');
             $table->unsignedBigInteger('condo_id');
             $table->foreign('condo_id')->references('id')->on('condos');
-            $table->unsignedBigInteger('resident_id')->nullable();
-            $table->foreign('resident_id')->references('id')->on('residents');
-            $table->string('state');
+            $table->unsignedBigInteger('owner_id');
+            $table->foreign('owner_id')->references('id')->on('owners');
+            $table->tinyInteger('ocupied');
             $table->timestamps();
         });
     }

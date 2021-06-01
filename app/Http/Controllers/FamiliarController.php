@@ -29,7 +29,6 @@ class FamiliarController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
 
     public function create(Request $request)
@@ -43,19 +42,18 @@ class FamiliarController extends Controller
             return redirect()->route('employees.create');
         }
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $resident_id = $request->session()->get('resident_id');
+        $user_id = $request->session()->get('user_id');
         $number_fam = $request->session()->get('number_fam');
         $request->session()->forget('number_fam');
-        $this->familiar->createFamiliar($request, $resident_id, $number_fam);
+        $this->familiar->createFamiliar($request, $user_id, $number_fam);
         return redirect()->route('employees.create');
 
     }
@@ -70,7 +68,6 @@ class FamiliarController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Car  $car
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
@@ -78,7 +75,7 @@ class FamiliarController extends Controller
         $familiar->fill($request->all())->save();
         Session::flash('message',__('Familiar atualizado com sucesso'));
         Session::flash('alert-class', 'alert-success');
-        return redirect('admin/condos');
+        return redirect(route('condos.index'));
     }
 
 }

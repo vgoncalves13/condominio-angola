@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resident;
+use App\Models\Rent;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class ResidentController extends Controller
+class RentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class ResidentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Rent  $rent
      * @return \Illuminate\Http\Response
      */
-    public function show(Resident $resident)
+    public function show(Rent $rent)
     {
         //
     }
@@ -53,10 +53,10 @@ class ResidentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Rent  $rent
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resident $resident)
+    public function edit(Rent $rent)
     {
         //
     }
@@ -65,10 +65,10 @@ class ResidentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Rent  $rent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resident $resident)
+    public function update(Request $request, Rent $rent)
     {
         //
     }
@@ -76,10 +76,10 @@ class ResidentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Resident  $resident
+     * @param  \App\Models\Rent  $rent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resident $resident)
+    public function destroy(Rent $rent)
     {
         //
     }

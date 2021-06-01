@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Finanças do condomínio <b>{{$condo_name->name}}</b></h1>
+    <h1 class="m-0 text-dark">Finanças do condomínio <b>{{$condo->name}}</b></h1>
 @stop
 
 @section('content')
@@ -20,10 +20,10 @@
                                     <th><p><strong>Valor</strong> </p></th>
                                         @foreach ($financials as $financial)
                                             <tr>
-                                                <td>{{$financial->bill_name}}</td>    
+                                                <td>{{$financial->bill_name}}</td>
                                                 <td>{{$financial->bill_month}}</td>
                                                 <td>{{$financial->bill_value}}</td>
-                                                <td>    
+                                                <td>
                                                     <a href='{{ asset("$financial->bill_path") }}'>Ver</a>
                                                 </td>
                                             </tr>

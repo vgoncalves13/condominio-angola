@@ -18,8 +18,8 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="bill_name">Condomínio e conta</label>
-                            <input name="bill_name" type="text" class="form-control" id="bill_name" placeholder="Nome do condomínio e  da conta">
+                            <label for="bill_name">Nome da conta</label>
+                            <input name="bill_name" type="text" class="form-control" id="bill_name" placeholder="Nome da conta">
                         </div>
                         <div class="form-group">
                             <label for="bill_month">Data</label>

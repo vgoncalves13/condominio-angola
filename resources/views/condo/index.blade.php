@@ -31,8 +31,8 @@
                                     <td>{{$condo->address->district}}</td>
                                     <td>{{$condo->address->city->city}}</td>
                                     <td>
-                                        <a class="btn btn-flat btn-info btn-sm" href="{{route('condos.show',$condo->id)}}">Ver</a>
-                                        <a class="btn btn-flat btn-info btn-sm" href="{{route('condos.edit',$condo->id)}}">Editar</a>
+                                        <a class="btn btn-flat btn-info btn-sm" href="{{route('condos.show',$condo)}}">Ver</a>
+                                        <a class="btn btn-flat btn-info btn-sm" href="{{route('condos.edit',$condo)}}">Editar</a>
                                     </td>
                                 </tr>
                             @endforeach

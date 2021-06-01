@@ -30,7 +30,6 @@ class EmployeeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
 
     public function create(Request $request)
@@ -41,11 +40,11 @@ class EmployeeController extends Controller
         }
         else{
             $request->session()->forget('number_emp');
-            $request->session()->forget('resident_id');
-            return redirect('admin/condos');
+            //$request->session()->forget('resident_id');
+            return redirect(route('condos.show'));
         }
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -54,12 +53,12 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $resident_id = $request->session()->get('resident_id');
+        //$resident_id = $request->session()->get('resident_id');
         $number_emp = $request->session()->get('number_emp');
         $request->session()->forget('number_emp');
-        $request->session()->forget('resident_id');
-        $this->employee->createEmployee($request, $resident_id, $number_emp);
-        return redirect('admin/condos');
+        //$request->session()->forget('resident_id');
+        $this->employee->createEmployee($request, $number_emp);
+        return redirect(route('condos.index'));
 
     }
 

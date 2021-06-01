@@ -17,11 +17,11 @@
                     <div class="row">
                         <div class="col-12">
                             <p><strong>Complemento:</strong> {{$residence->complement}}</p>
-                            <p><strong>Nome do responsável: </strong> {{$residence->resident->user->name}}</p>
-                            <p><strong>E-mail: </strong> {{$residence->resident->user->email}}</p>
-                            <p><strong>Documento: </strong> {{$residence->resident->user->document}}</p>
-                            <p><strong>Usuário: </strong> {{$residence->resident->username}}</p>
-                            <p><strong>Data de Nascimento: </strong> {{$residence->resident->user->birth_date}}</p>
+                            <p><strong>Nome do responsável: </strong> {{$residence->user->name}}</p>
+                            <p><strong>E-mail: </strong> {{$residence->user->email}}</p>
+                            <p><strong>Documento: </strong> {{$residence->user->document}}</p>
+                            <p><strong>Usuário: </strong> {{$residence->username}}</p>
+                            <p><strong>Data de Nascimento: </strong> {{$residence->user->birth_date}}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -44,7 +44,7 @@
                             </tr>
                                 @foreach ($residence->cars as $car)
                                     <tr>
-                                        <td>{{$car->model}}</td>    
+                                        <td>{{$car->model}}</td>
                                         <td>{{$car->car_plate}}</td>
                                         <td>
                                         <a class="btn btn-flat btn-info btn-sm" href="{{route('cars.edit',$car->id)}}">Editar</a>
@@ -68,9 +68,9 @@
                                 <th>Parentesco</th>
                                 <th>Ações</th>
                             </tr>
-                                @foreach ($residence->resident->familiars as $familiar)
+                                @foreach ($residence->user->familiars as $familiar)
                                     <tr>
-                                        <td>{{$familiar->name}}</td>    
+                                        <td>{{$familiar->name}}</td>
                                         <td>{{$familiar->age}}</td>
                                         <td>{{$familiar->relationship}}</td>
                                         <td>
@@ -95,9 +95,9 @@
                                 <th>Função</th>
                                 <th>Ações</th>
                             </tr>
-                                @foreach ($residence->resident->employees as $employee)
+                                @foreach ($residence->user->employees as $employee)
                                     <tr>
-                                        <td>{{$employee->name}}</td>    
+                                        <td>{{$employee->name}}</td>
                                         <td>{{$employee->age}}</td>
                                         <td>{{$employee->occupation}}</td>
                                         <td>

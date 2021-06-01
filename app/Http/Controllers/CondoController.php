@@ -51,11 +51,9 @@ class CondoController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Condo  $condo
-     * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Condo $condo)
     {
-        $condo = Condo::with('address.city','residences')->findOrfail($id);
         return view('condo.show')->with(compact('condo'));
     }
 
@@ -65,9 +63,8 @@ class CondoController extends Controller
      * @param  \App\Models\Condo  $condo
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Condo $condo)
     {
-        $condo = Condo::findOrfail($id);
         $cities = DB::table('cities')->pluck('city','id');
         return view('condo.edit')->with(compact('condo','cities'));
     }
