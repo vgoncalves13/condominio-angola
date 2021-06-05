@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Owner;
 use App\Models\Residence;
 use App\Models\Rent;
 use App\Models\User;
@@ -12,6 +13,16 @@ use Illuminate\Support\Facades\DB;
 
 class ResidenceController extends Controller
 {
+
+    protected $residence, $owner, $rent;
+
+    public function __construct(Residence $residence, Owner $owner, Rent $rent)
+    {
+        $this->residence = $residence;
+        $this->owner = $owner;
+        $this->rent = $rent;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,25 +47,28 @@ class ResidenceController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-
-        $resident = new Resident();
-        $resident->user()->associate($user);
-        $resident->fill($request->all());
-        $resident->save();
+        $user = User::create_user($request);
+        $owner = $this->owner->createOwner($request, $user->id);
 
         $residence = new Residence();
-        $residence->resident()->associate($resident);
+        $residence->owner_id = $owner->id;
         $residence->fill($request->all());
+
+        if(!$this->owner->isOwner()){
+            $user = User::create_user();
+        }
+
+
         if($residence->save()){
             $request->session()->put('number_cars', $request->number_cars);
             $request->session()->put('number_fam', $request->number_fam);
             $request->session()->put('number_emp', $request->number_emp);
             $request->session()->put('residence_id', $residence->id);
             $request->session()->put('owner_id', $residence->owner_id);
+            $request->session()->put('user_id', $residence->owner->user->id);
             return redirect()->route('cars.create');
         }
 

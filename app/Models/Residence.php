@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Residence extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['complement', 'condo_id', 'owner_id', 'occupied'];
+    protected $fillable = ['complement', 'condo_id', 'occupied'];
 
     public function condos()
     {
@@ -25,6 +26,5 @@ class Residence extends Model
     {
         return $this->hasMany('App\Models\Car');
     }
-
 
 }

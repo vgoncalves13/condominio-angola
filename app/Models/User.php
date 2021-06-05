@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Rent');
     }
 
+    public function owner()
+    {
+        return $this->hasOne('App\Models\User');
+    }
+
     public static function create_user(Request $request)
     {
         return User::create([

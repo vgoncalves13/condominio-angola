@@ -20,7 +20,7 @@ class CreateResidencesTable extends Migration
             $table->foreign('condo_id')->references('id')->on('condos');
             $table->unsignedBigInteger('owner_id');
             $table->foreign('owner_id')->references('id')->on('owners');
-            $table->tinyInteger('ocupied');
+            $table->tinyInteger('occupied')->default(1);
             $table->timestamps();
         });
     }

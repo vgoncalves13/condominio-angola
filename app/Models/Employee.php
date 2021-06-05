@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 
-class employee extends Model
+class Employee extends Model
 {
     use HasFactory;
 
     protected $fillable = ['name', 'occupation', 'age', 'user_id'];
 
-    public function resident()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Resident');
+        return $this->belongsTo('App\Models\User');
     }
 
     public function createEmployee(Request $request, $user_id, $quantity = 1)

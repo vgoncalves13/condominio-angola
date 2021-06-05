@@ -19,5 +19,22 @@ class Rent extends Model
     }
 
 
+    public function createRent($user_id, $residence_id)
+    {
+        $rent = new Rent();
+        $rent->user_id = $user_id;
+        $rent->residence_id  = $residence_id;
+        $rent->save();
+
+        return $rent;
+    }
+
+    public function createTenant($user_id, $residence_id)
+    {
+        $rent = $this->createRent($user_id, $residence_id);
+        return $rent;
+    }
+
+
 
 }
