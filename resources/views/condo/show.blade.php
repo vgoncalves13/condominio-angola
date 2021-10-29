@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Detalhes do condomínio</h1>
 @stop
@@ -34,7 +32,6 @@
                     <a class="btn btn-flat btn-info" href="{{route('files.create',$condo->id)}}">Adicionar Logo</a>
                     <a class="btn btn-flat btn-info" href="{{route('residences.create',$condo->id)}}">Adicionar residência</a>
                     <a class="btn btn-flat btn-info" href="{{route('financials.show',$condo->id)}}">Finanças do Condomínio</a>
-                    <a class="btn btn-flat btn-info" href="{{route('financials.create',$condo->id)}}">Add do Condomínio</a>
                     </div>
                 </div>
                 <div class="row">

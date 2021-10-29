@@ -7,13 +7,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\Models\Condo;
 
 class Financial extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'condo_id',
+        'service_provider_id',
+        'bill_name',
+        'bill_month',
+        'bill_value',
+        'bill_path',
+        'bill_type'
+    ];
 
-    protected $fillable = ['condo_id', 'bill_name', 'bill_month', 'bill_value','bill_path'];
 
     /**
      * Return bill date in angolan format DMY.
@@ -36,12 +45,24 @@ class Financial extends Model
     {
         $bill_value = floatval($value);
         return sprintf('%01.2f Kz',$bill_value);
-
     }
 
+    /**
+     * Relationship
+     */
     public function condo()
     {
-        return $this->belongsTo('App\Models\Condos');
+        return $this->belongsTo(Condo::class);
+    }
+
+    public function service_provider()
+    {
+        return $this->belongsTo(ServiceProvider::class);
+    }
+
+    public function residences()
+    {
+        return $this->belongsToMany(Residence::class)->withPivot('spent');
     }
 
     public static function UploadBill(Request $request)
@@ -56,12 +77,32 @@ class Financial extends Model
         $request->file->move(public_path('storage/bills/'), $fileName);
 
         $bill_path = 'storage/bills/' .$fileName;
+//
+//        $financial = Financial::create([
+//                'bill_path' => $bill_path,
+//                'condo_id' => $request->condo_id,
+//            ])->fill($request->all());
 
-        Financial::create(
-            [
-                'bill_path' => $bill_path,
-                'condo_id' => $request->condo_id,
-            ])->fill($request->all())->save();
+        $financial = Financial::create($request->all());
+        $financial->fill([
+            'bill_path' => $bill_path,
+        ]);
+        $financial->save();
 
+        return $financial;
+    }
+
+    public function getFinancialDivision(Financial $financial)
+    {
+        $value = $financial->getRawOriginal('bill_value');
+        $residences_quantity = $this->condo->getSumResidences();
+
+        return $value / $residences_quantity;
+    }
+
+    public function getFinancialIndividual(Financial $financial)
+    {
+        $value = $financial->getRawOriginal('bill_value');
+        $finanacial_residence = FinancialResidence::where('financial_id', $financial->id)->get();
     }
 }

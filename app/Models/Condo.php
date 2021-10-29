@@ -27,8 +27,18 @@ class Condo extends Model
         return $this->hasOne('App\Models\File');
     }
 
-    public function financial()
+    public function financials()
     {
-        return $this->hasMany('App\Models\Financial');
+        return $this->hasMany(Financial::class);
+    }
+
+    public function serviceProviders()
+    {
+        return $this->belongsToMany(ServiceProvider::class);
+    }
+
+    public function getSumResidences()
+    {
+        return $this->residences()->count();
     }
 }

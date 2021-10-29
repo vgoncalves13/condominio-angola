@@ -72,15 +72,14 @@ class EmployeeController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Car  $car
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $employee = Employee::findOrfail($id);
+        $employee = Employee::with('user.owner.residences')->findOrfail($id);
         $employee->fill($request->all())->save();
         Session::flash('message',__('Funcionário atualizado com sucesso'));
         Session::flash('alert-class', 'alert-success');
-        return redirect('admin/condos');
+        return redirect()->route('residences.show',$employee->user->owner->residence->id);
     }
 
 

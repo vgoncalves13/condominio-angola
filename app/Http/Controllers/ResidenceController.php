@@ -50,27 +50,32 @@ class ResidenceController extends Controller
      */
     public function store(Request $request)
     {
+        //User owner
         $user = User::create_user($request);
         $owner = $this->owner->createOwner($request, $user->id);
 
         $residence = new Residence();
         $residence->owner_id = $owner->id;
         $residence->fill($request->all());
+        $residence->save();
 
-        if(!$this->owner->isOwner()){
-            $user = User::create_user();
+        if($this->owner->isOwner($request)){
+            $rent = new Rent();
+            $rent->createRent($user->id, $residence->id);
+        }else{
+            //User rent
+            $user_rent = User::create_user($request);
+            $rent = new Rent();
+            $rent->createRent($user_rent->id, $residence->id);
         }
 
-
-        if($residence->save()){
-            $request->session()->put('number_cars', $request->number_cars);
-            $request->session()->put('number_fam', $request->number_fam);
-            $request->session()->put('number_emp', $request->number_emp);
-            $request->session()->put('residence_id', $residence->id);
-            $request->session()->put('owner_id', $residence->owner_id);
-            $request->session()->put('user_id', $residence->owner->user->id);
-            return redirect()->route('cars.create');
-        }
+        $request->session()->put('number_cars', $request->number_cars);
+        $request->session()->put('number_fam', $request->number_fam);
+        $request->session()->put('number_emp', $request->number_emp);
+        $request->session()->put('residence_id', $residence->id);
+        $request->session()->put('owner_id', $residence->owner_id);
+        $request->session()->put('user_id', $residence->owner->user->id);
+        return redirect()->route('cars.create');
 
     }
 

@@ -10,7 +10,7 @@ class Residence extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['complement', 'condo_id', 'occupied'];
+    protected $fillable = ['complement', 'condo_id', 'occupied', 'owner_id'];
 
     public function condos()
     {
@@ -25,6 +25,11 @@ class Residence extends Model
     public function cars()
     {
         return $this->hasMany('App\Models\Car');
+    }
+
+    public function financials()
+    {
+        return $this->belongsToMany(Financial::class);
     }
 
 }

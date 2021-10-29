@@ -39,6 +39,8 @@ Route::resource('admin/files', App\Http\Controllers\FileController::class);
 
 Route::resource('admin/financials', App\Http\Controllers\FinancialController::class);
 
+Route::resource('admin/service-providers', App\Http\Controllers\ServiceProviderController::class);
+
 
 
 /*
@@ -55,3 +57,7 @@ Route::post('admin/files/store', 'App\Http\Controllers\FileController@store' )->
 Route::get('admin/financials/create/{condo_id}', 'App\Http\Controllers\FinancialController@create' )->name('financials.create');
 
 Route::post('admin/financials/store','App\Http\Controllers\FinancialController@store')->name('financials.store');
+
+Route::get('admin/financials/{financial}/details','App\Http\Controllers\FinancialController@details')->name('financials.details');
+
+Route::post('admin/financials_residence/store','App\Http\Controllers\FinancialResidenceController@store')->name('financial_residence.store');

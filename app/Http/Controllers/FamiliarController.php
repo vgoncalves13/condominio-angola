@@ -75,7 +75,7 @@ class FamiliarController extends Controller
         $familiar->fill($request->all())->save();
         Session::flash('message',__('Familiar atualizado com sucesso'));
         Session::flash('alert-class', 'alert-success');
-        return redirect(route('condos.index'));
+        return redirect()->route('residences.show',$id);
     }
 
 }

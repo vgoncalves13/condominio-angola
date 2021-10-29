@@ -22,5 +22,7 @@ return [
     'residence_updated' => 'Residencia atualizada com sucesso',
     'bill_created' => 'Conta cadastrada com sucesso',
     'file_created' => 'Arquivo enviado com sucesso',
-
+    'owner_informations' => 'Informações do Proprietário',
+    'rent_informations' => 'Informações do Inquilino',
+    'service_provider_created' => 'Prestador de serviço cadastrado com sucesso'
 ];

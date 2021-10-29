@@ -62,7 +62,7 @@ class User extends Authenticatable
 
     public function owner()
     {
-        return $this->hasOne('App\Models\User');
+        return $this->hasOne('App\Models\Owner');
     }
 
     public static function create_user(Request $request)

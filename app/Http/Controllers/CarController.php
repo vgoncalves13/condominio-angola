@@ -93,7 +93,7 @@ class CarController extends Controller
         $car->fill($request->all())->save();
         Session::flash('message',__('Viatura atualizada com sucesso'));
         Session::flash('alert-class', 'alert-success');
-        return redirect('admin/condos');
+        return redirect()->route('residences.show',$id);
     }
 
     /**

@@ -47,6 +47,12 @@
                 @if(\Illuminate\Support\Facades\Session::has('message'))
                     <p class="alert {{ \Illuminate\Support\Facades\Session::get('alert-class', 'alert-info') }}">{{ \Illuminate\Support\Facades\Session::get('message') }}</p>
                 @endif
+                @if(\Illuminate\Support\Facades\Session::has('error'))
+                    <p class="alert {{ \Illuminate\Support\Facades\Session::get('alert-class', 'alert-danger') }}">{{ \Illuminate\Support\Facades\Session::get('error') }}</p>
+                @endif
+                @yield('validation_error')
+
+            </div>
             <div class="content">
                 <div class="{{ config('adminlte.classes_content') ?: $def_container_class }}">
                     @yield('content')

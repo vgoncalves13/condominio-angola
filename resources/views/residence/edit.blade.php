@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Residências</h1>
 @stop
@@ -32,7 +30,7 @@
                             <input name="name" type="name" class="form-control"
                                 id="name"
                                 placeholder="Nome do responsável"
-                                value="{{$residence->user->name}}"
+                                value="{{$residence->owner->user->name}}"
                             >
                         </div>
                         <div class="form-group">
@@ -40,7 +38,7 @@
                             <input name="email" type="email" class="form-control"
                                 id="email"
                                 placeholder="E-mail"
-                                value="{{$residence->user->email}}"
+                                value="{{$residence->owner->user->email}}"
                                 >
                         </div>
                         <div class="form-group">
@@ -48,7 +46,7 @@
                             <input name="document" type="text" class="form-control"
                                 id="document"
                                 placeholder="Documento"
-                                value="{{$residence->user->document}}"
+                                value="{{$residence->owner->user->document}}"
                                 >
                         </div>
                         <div class="form-group">
@@ -56,14 +54,14 @@
                             <input name="username" type="text" class="form-control"
                                 id="username"
                                 placeholder="Usuário"
-                                value="{{$residence->username}}"
+                                value="{{$residence->owner->user->username}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="birth_date">Data de Nascimento</label>
                             <input name="birth_date" type="date" class="form-control"
                                 id="birth_date"
-                                value="{{$residence->user->birth_date}}"
+                                value="{{$residence->owner->user->birth_date}}"
                                 >
                         </div>
                         <div class="form-group">
@@ -71,20 +69,6 @@
                             <input name="number_cars" type="number" class="form-control"
                                 id="number_cars" min="0" max="5"
                                 value="{{$residence->number_cars}}"
-                                >
-                        </div>
-                        <div class="form-group">
-                            <label for="number_fam">Familiares</label>
-                            <input name="number_fam" type="number" class="form-control"
-                                id="number_fam" min="0"
-                                value="{{$residence->number_fam}}"
-                                >
-                        </div>
-                        <div class="form-group">
-                            <label for="number_emp">Funcionários</label>
-                            <input name="number_emp" type="number" class="form-control"
-                                id="number_emp" min="0"
-                                value="{{$residence->number_emp}}"
                                 >
                         </div>
                     </div>

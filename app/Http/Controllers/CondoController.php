@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 use App\Models\Condo;
+use App\Models\ServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -28,8 +29,9 @@ class CondoController extends Controller
      */
     public function create()
     {
+        $service_providers = ServiceProvider::all(['id', 'name']);
         $cities = DB::table('cities')->pluck('city','id');
-        return view('condo.create')->with(compact('cities'));
+        return view('condo.create')->with(compact('cities','service_providers'));
     }
 
     /**
@@ -65,8 +67,9 @@ class CondoController extends Controller
      */
     public function edit(Condo $condo)
     {
+        $service_providers = ServiceProvider::all(['id', 'name']);
         $cities = DB::table('cities')->pluck('city','id');
-        return view('condo.edit')->with(compact('condo','cities'));
+        return view('condo.edit')->with(compact('condo','cities','service_providers'));
     }
 
     /**
@@ -80,6 +83,7 @@ class CondoController extends Controller
     {
         $condo = Condo::findOrfail($id);
         $condo->fill($request->all())->save();
+        $condo->serviceProviders()->sync($request->service_providers);
         $condo->address->fill($request->all())->save();
         Session::flash('message',__('message.condo_updated'));
         Session::flash('alert-class', 'alert-success');

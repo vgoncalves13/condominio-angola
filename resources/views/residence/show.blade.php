@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Detalhes da residência</h1>
 @stop
@@ -17,11 +15,11 @@
                     <div class="row">
                         <div class="col-12">
                             <p><strong>Complemento:</strong> {{$residence->complement}}</p>
-                            <p><strong>Nome do responsável: </strong> {{$residence->user->name}}</p>
-                            <p><strong>E-mail: </strong> {{$residence->user->email}}</p>
-                            <p><strong>Documento: </strong> {{$residence->user->document}}</p>
-                            <p><strong>Usuário: </strong> {{$residence->username}}</p>
-                            <p><strong>Data de Nascimento: </strong> {{$residence->user->birth_date}}</p>
+                            <p><strong>Nome do responsável: </strong> {{$residence->owner->user->name}}</p>
+                            <p><strong>E-mail: </strong> {{$residence->owner->user->email}}</p>
+                            <p><strong>Documento: </strong> {{$residence->owner->user->document}}</p>
+                            <p><strong>Usuário: </strong> {{$residence->owner->user->username}}</p>
+                            <p><strong>Data de Nascimento: </strong> {{$residence->owner->user->birth_date}}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -68,7 +66,7 @@
                                 <th>Parentesco</th>
                                 <th>Ações</th>
                             </tr>
-                                @foreach ($residence->user->familiars as $familiar)
+                                @foreach ($residence->owner->user->familiars as $familiar)
                                     <tr>
                                         <td>{{$familiar->name}}</td>
                                         <td>{{$familiar->age}}</td>
@@ -95,7 +93,7 @@
                                 <th>Função</th>
                                 <th>Ações</th>
                             </tr>
-                                @foreach ($residence->user->employees as $employee)
+                                @foreach ($residence->owner->user->employees as $employee)
                                     <tr>
                                         <td>{{$employee->name}}</td>
                                         <td>{{$employee->age}}</td>

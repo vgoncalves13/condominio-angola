@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Viaturas</h1>
 @stop
@@ -21,13 +19,13 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="model">Modelo do carro</label>
-                            <input name="model" type="text" class="form-control" id="model" 
+                            <input name="model" type="text" class="form-control" id="model"
                             placeholder="Modelo"
                             value="{{$car->model}}">
                         </div>
                         <div class="form-group">
                             <label for="car_plate">Número Placa do carro</label>
-                            <input name="car_plate" type="text" class="form-control" id="car_plate" 
+                            <input name="car_plate" type="text" class="form-control" id="car_plate"
                             placeholder="Número Placa"
                             value="{{$car->car_plate}}">
                         </div>

@@ -1,7 +1,5 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
-
 @section('content_header')
     <h1 class="m-0 text-dark">Condomínios</h1>
 @stop
@@ -21,48 +19,48 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Nome condomínio</label>
-                            <input name="name" type="text" class="form-control" 
-                                id="name" 
+                            <input name="name" type="text" class="form-control"
+                                id="name"
                                 placeholder="Nome condomínio"
                                 value="{{$condo->name}}"
                             >
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input name="email" type="email" class="form-control" 
-                                id="email" 
+                            <input name="email" type="email" class="form-control"
+                                id="email"
                                 placeholder="E-mail do condomínio"
                                 value="{{$condo->email}}"
                             >
                         </div>
                         <div class="form-group">
                             <label for="address">Endereço</label>
-                            <input name="address" type="text" class="form-control" 
-                                id="address" 
+                            <input name="address" type="text" class="form-control"
+                                id="address"
                                 placeholder="Endereço"
                                 value="{{$condo->address->address}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="address2">Endereço 2</label>
-                            <input name="address2" type="text" class="form-control" 
-                                id="address2" 
+                            <input name="address2" type="text" class="form-control"
+                                id="address2"
                                 placeholder="Endereço 2"
                                 value="{{$condo->address->address2}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="district">Distrito</label>
-                            <input name="district" type="text" class="form-control" 
-                                id="district" 
+                            <input name="district" type="text" class="form-control"
+                                id="district"
                                 placeholder="Distrito"
                                 value="{{$condo->address->district}}"
                                 >
                         </div>
                         <div class="form-group">
                             <label for="postal_code">Código Postal</label>
-                            <input name="postal_code" type="text" class="form-control" 
-                                id="postal_code" 
+                            <input name="postal_code" type="text" class="form-control"
+                                id="postal_code"
                                 placeholder="Código Postal"
                                 value="{{$condo->address->postal_code}}"
                                 >
@@ -75,9 +73,27 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>  
+                        <h4>Prestadores de serviço</h4>
+                        <div class="form-group col-md-12"> <!-- Providers -->
+                            @foreach($service_providers as $provider)
+                                <div class="form-check">
+                                    <input
+                                        @foreach($condo->serviceProviders as $condo_provider)
+                                        @if($condo_provider->id == $provider->id)
+                                        checked
+                                        @endif
+                                        @endforeach name="service_providers[]"
+                                        class="form-check-input" type="checkbox" value="{{$provider->id}}"
+                                        id="{{$provider->name}}"
+                                    >
+                                    <label class="form-check-label" for="{{$provider->name}}">
+                                        {{$provider->name}}
+                                    </label>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                     <!-- /.card-body -->
-
                     <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Atualizar</button>
                     </div>

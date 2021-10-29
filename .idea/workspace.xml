@@ -25,7 +25,47 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c320c04-ddfe-41d2-8ff4-7190232916bc" name="Default Changelist" comment="" />
+    <list default="true" id="9c320c04-ddfe-41d2-8ff4-7190232916bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CondoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CondoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FamiliarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FamiliarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FinancialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FinancialController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResidenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResidenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Condo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Condo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Financial.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Financial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Residence.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Residence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_14_051608_create_financials_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_14_051608_create_financials_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vendor/adminlte/pt-br/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vendor/adminlte/pt-br/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/condo/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/condo/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/condo/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/condo/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/condo/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/condo/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/condo/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/condo/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/familiar/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/familiar/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/familiar/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/familiar/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/file/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/file/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/financial/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/financial/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/financial/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/financial/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/financial/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/financial/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/residence/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/residence/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/residence/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/residence/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/residence/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/residence/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/residence/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/residence/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +208,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cbpr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/financial" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -178,6 +218,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\condominio-angola\resources\views\financial" />
+      <recent name="C:\laragon\www\condominio-angola\resources\lang\vendor\adminlte" />
+      <recent name="C:\laragon\www\condominio-angola\resources\lang" />
+      <recent name="C:\laragon\www\condominio-angola\resources\views" />
       <recent name="C:\laragon\www\condominio-angola\resources\views\condo" />
     </key>
   </component>
@@ -201,7 +245,15 @@
       <workItem from="1604720006579" duration="2855000" />
       <workItem from="1622498635152" duration="8166000" />
       <workItem from="1622825254715" duration="7000" />
-      <workItem from="1622841721823" duration="12579000" />
+      <workItem from="1622841721823" duration="13215000" />
+      <workItem from="1625009346552" duration="6047000" />
+      <workItem from="1625261862552" duration="14912000" />
+      <workItem from="1625527254151" duration="24389000" />
+      <workItem from="1629923390523" duration="611000" />
+      <workItem from="1630450547228" duration="20000" />
+      <workItem from="1633949640610" duration="5544000" />
+      <workItem from="1634321548876" duration="653000" />
+      <workItem from="1634588381625" duration="244000" />
     </task>
     <servers />
   </component>
@@ -233,10 +285,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="370" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622500764041">
+    <state x="370" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625719387867">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="370" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1622500764041" />
+    <state x="370" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1625719387867" />
+    <state x="1737" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1625275805980">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1737" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1625275805980" />
     <state x="1035" y="96" width="938" height="768" key="find.popup" timestamp="1622511460386">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
