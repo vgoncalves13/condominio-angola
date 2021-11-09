@@ -47,8 +47,9 @@ Route::resource('admin/service-providers', App\Http\Controllers\ServiceProviderC
 */
 
 Route::get('admin/residences/create/{condo_id}', 'App\Http\Controllers\ResidenceController@create')->name('residences.create');
-
 Route::post('admin/residences/store','App\Http\Controllers\ResidenceController@store')->name('residences.store');
+Route::post('admin/residences/storeTenant','App\Http\Controllers\ResidenceController@storeTenant')->name('residences.storeTenant');
+Route::get('admin/residences/tenant/create','App\Http\Controllers\ResidenceController@createTenant')->name('residences.createTenant');
 
 Route::get('admin/files/create/{condo_id}', 'App\Http\Controllers\FileController@create')->name('files.create');
 

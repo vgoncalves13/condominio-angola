@@ -25,5 +25,7 @@ return [
     'file_created' => 'Arquivo enviado com sucesso',
     'owner_informations' => 'Informações do Proprietário',
     'rent_informations' => 'Informações do Inquilino',
-    'service_provider_created' => 'Prestador de serviço cadastrado com sucesso'
+    'service_provider_created' => 'Prestador de serviço cadastrado com sucesso',
+    'error_total_reading' => 'ERRO!!! O total da marcação ultrapassa o estipulado na conta, verifique os valores de cada morada!',
+    'warning_total_reading' => 'ATENÇÃO!!! A soma das medições ficou menor que o estipulado na conta. Poderá haver inconsistências!'
 ];

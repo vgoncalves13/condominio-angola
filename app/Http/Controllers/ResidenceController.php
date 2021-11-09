@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ResidenceRequest;
 use App\Models\Owner;
 use App\Models\Residence;
 use App\Models\Rent;
@@ -40,6 +41,7 @@ class ResidenceController extends Controller
      */
     public function create($condo_id)
     {
+        \session()->put('condo_id',$condo_id);
         return view('residence.create')->with(compact('condo_id'));
     }
 
@@ -48,26 +50,18 @@ class ResidenceController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public function store(Request $request)
+    public function store(ResidenceRequest $request)
     {
         //User owner
         $user = User::create_user($request);
-        $owner = $this->owner->createOwner($request, $user->id);
+        $owner = new Owner();
+        $owner->user_id = $user->id;
+        $owner->save();
 
         $residence = new Residence();
         $residence->owner_id = $owner->id;
         $residence->fill($request->all());
         $residence->save();
-
-        if($this->owner->isOwner($request)){
-            $rent = new Rent();
-            $rent->createRent($user->id, $residence->id);
-        }else{
-            //User rent
-            $user_rent = User::create_user($request);
-            $rent = new Rent();
-            $rent->createRent($user_rent->id, $residence->id);
-        }
 
         $request->session()->put('number_cars', $request->number_cars);
         $request->session()->put('number_fam', $request->number_fam);
@@ -75,8 +69,30 @@ class ResidenceController extends Controller
         $request->session()->put('residence_id', $residence->id);
         $request->session()->put('owner_id', $residence->owner_id);
         $request->session()->put('user_id', $residence->owner->user->id);
-        return redirect()->route('cars.create');
 
+        if($request->owner == 'owner'){
+            Rent::createRent($user->id, $residence->id);
+            return redirect()->route('cars.create');
+        }else{
+            return redirect()->route('residences.createTenant');
+        }
+    }
+
+    public function createTenant()
+    {
+        return view('residence.create_tenant');
+    }
+
+    public function storeTenant(Request $request)
+    {
+        $request->session()->put('number_cars', $request->number_cars);
+        $request->session()->put('number_fam', $request->number_fam);
+        $request->session()->put('number_emp', $request->number_emp);
+
+        $user_tenant = User::create_user($request);
+        Rent::createRent($user_tenant->id, \session()->get('residence_id'));
+
+        return redirect()->route('cars.create');
     }
 
     /**

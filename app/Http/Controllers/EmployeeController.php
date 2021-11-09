@@ -41,7 +41,9 @@ class EmployeeController extends Controller
         else{
             $request->session()->forget('number_emp');
             $request->session()->forget('user_id');
-            return redirect(route('condos.show'));
+            Session::flash('message',__('message.residence_created'));
+            Session::flash('alert-class', 'alert-success');
+            return redirect(route('condos.show',\session()->get('condo_id')));
         }
     }
 
@@ -49,7 +51,6 @@ class EmployeeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -58,7 +59,9 @@ class EmployeeController extends Controller
         $this->employee->createEmployee($request, $user_id, $number_emp);
         $request->session()->forget('number_emp');
         $request->session()->forget('user_id');
-        return redirect(route('condos.index'));
+        Session::flash('message',__('message.residence_created'));
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('condos.show',\session()->get('condo_id')));
 
     }
 

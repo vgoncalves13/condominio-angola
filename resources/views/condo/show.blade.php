@@ -45,8 +45,8 @@
                                 @foreach ($condo->residences as $residence)
                                     <tr>
                                         <td>{{$residence->complement}}</td>
-                                        <td>@isset($residence->resident->user->name){{$residence->resident->user->name}}@endisset</td>
-                                        <td>@isset($residence->resident->user->document){{$residence->resident->user->document}}@endisset</td>
+                                        <td>@isset($residence->rent->user->name){{$residence->rent->user->name}}@endisset</td>
+                                        <td>@isset($residence->rent->user->document){{$residence->rent->user->document}}@endisset</td>
                                         <td>
                                         <a class="btn btn-flat btn-info btn-sm" href="{{route('residences.show',$residence->id)}}">Ver</a>
                                         <a class="btn btn-flat btn-info btn-sm" href="{{route('residences.edit',$residence->id)}}">Editar</a>

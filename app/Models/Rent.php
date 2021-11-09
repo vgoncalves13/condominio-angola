@@ -19,7 +19,7 @@ class Rent extends Model
     }
 
 
-    public function createRent($user_id, $residence_id)
+    public static function createRent($user_id, $residence_id)
     {
         $rent = new Rent();
         $rent->user_id = $user_id;

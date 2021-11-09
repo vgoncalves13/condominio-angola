@@ -26,7 +26,8 @@ class FinancialRequest extends FormRequest
         return [
             'bill_type' => 'required',
             'bill_name' => 'required',
-            'service_provider_id' => 'required'
+            'service_provider_id' => 'required',
+            'measurement' => 'required'
         ];
     }
 

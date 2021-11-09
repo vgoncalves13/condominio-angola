@@ -15,11 +15,12 @@
                     <div class="row">
                         <div class="col-12">
                             <p><strong>Complemento:</strong> {{$residence->complement}}</p>
-                            <p><strong>Nome do responsável: </strong> {{$residence->owner->user->name}}</p>
-                            <p><strong>E-mail: </strong> {{$residence->owner->user->email}}</p>
-                            <p><strong>Documento: </strong> {{$residence->owner->user->document}}</p>
-                            <p><strong>Usuário: </strong> {{$residence->owner->user->username}}</p>
-                            <p><strong>Data de Nascimento: </strong> {{$residence->owner->user->birth_date}}</p>
+                            <p><strong>Nome do proprietário: </strong> {{$residence->owner->user->name}}</p>
+                            <p><strong>Nome do responsável: </strong> {{$residence->rent->user->name}}</p>
+                            <p><strong>E-mail: </strong> {{$residence->rent->user->email}}</p>
+                            <p><strong>Documento: </strong> {{$residence->rent->user->document}}</p>
+                            <p><strong>Usuário: </strong> {{$residence->rent->user->username}}</p>
+                            <p><strong>Data de Nascimento: </strong> {{$residence->rent->user->birth_date}}</p>
                         </div>
                     </div>
                     <div class="row">

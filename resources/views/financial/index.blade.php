@@ -10,13 +10,15 @@
             <div class="card">
                 <div class="card-body">
                     <table class="table" id="tabela-financeiro">
-                        <th><strong>Nome</strong></th>
-                        <th><strong>Data</strong></th>
-                        <th><strong>Valor</strong></th>
-                        <th><strong>Ações</strong></th>
+                        <th>Nome</th>
+                        <th>Tipo conta</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
                             @foreach($financials as $financial)
                                 <tr>
                                     <td>{{$financial->bill_name}}</td>
+                                    <td>{{$financial->bill_type}}</td>
                                     <td>{{$financial->bill_month}}</td>
                                     <td>{{$financial->bill_value}}</td>
                                     <td>

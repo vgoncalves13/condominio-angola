@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 
 class User extends Component
 {
-
     /**
      * Create a new component instance.
      *
@@ -14,6 +13,7 @@ class User extends Component
      */
     public function __construct()
     {
+
     }
 
     /**
