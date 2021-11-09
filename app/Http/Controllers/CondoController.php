@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CondoCreateRequest;
 use App\Models\Address;
 use App\Models\Condo;
 use App\Models\ServiceProvider;
@@ -40,7 +41,7 @@ class CondoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CondoCreateRequest $request)
     {
         $condo = Condo::create($request->all());
         $condo->address()->create($request->all());
