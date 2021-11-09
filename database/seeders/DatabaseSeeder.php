@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([CitySeeder::class]);
         //::factory()->count('10')->create();
-        Address::factory()->count('10')->create();
+        //Address::factory()->count('10')->create();
 
     }
 }
