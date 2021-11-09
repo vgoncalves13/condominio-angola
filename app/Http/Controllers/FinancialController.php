@@ -34,7 +34,12 @@ class FinancialController extends Controller
 
     public function store(FinancialRequest $request)
     {
-        $financial = Financial::UploadBill($request);
+        $bill_path = Financial::UploadBill($request);
+        $financial = Financial::create($request->all());
+        $financial->fill([
+            'bill_path' => $bill_path,
+        ]);
+        $financial->save();
         Session::flash('message',__('message.bill_created'));
         Session::flash('alert-class', 'alert-success');
         return (redirect(route('financials.show',$financial->condo->id)));
@@ -49,11 +54,12 @@ class FinancialController extends Controller
 
     public function details(Financial $financial)
     {
-        if ($financial->type == 'division'){
+        if ($financial->bill_type == 'division'){
             $division = $financial->getFinancialDivision($financial);
             return view('financial.details_division',compact('division','financial'));
         }else{
-            return view('financial.details_individual',compact('financial'));
+            $values = $financial->getFinancialIndividual($financial);
+            return view('financial.details_individual',compact('financial','values'));
         }
 
     }

@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="age">Idade {{$i+1}}</label>
-                            <input name="age[]" type="text" class="form-control" id="age" placeholder="Idade do Familiar">
+                            <input name="age[]" type="number" class="form-control" id="age" placeholder="Idade do Familiar">
                         </div>
                         <div class="form-group">
                             <label for="relationship">Parentesco {{$i+1}}</label>

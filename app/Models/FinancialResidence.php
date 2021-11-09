@@ -14,7 +14,8 @@ class FinancialResidence extends Model
     protected $fillable = [
         'financial_id',
         'residence_id',
-        'spent'
+        'spent',
+        'reading'
     ];
 
 

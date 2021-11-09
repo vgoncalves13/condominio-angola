@@ -22,6 +22,7 @@ class CreateFinancialsTable extends Migration
             $table->string('bill_name');
             $table->string('bill_month');
             $table->string('bill_value');
+            $table->string('reading');
             $table->string('bill_path');
             $table->string('bill_type')->default('division');
             $table->timestamps();

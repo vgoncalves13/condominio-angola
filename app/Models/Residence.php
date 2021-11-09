@@ -29,7 +29,12 @@ class Residence extends Model
 
     public function financials()
     {
-        return $this->belongsToMany(Financial::class);
+        return $this->belongsToMany(Financial::class)->withPivot(['spent','reading']);
+    }
+
+    public function rent()
+    {
+        return $this->hasOne(Rent::class);
     }
 
 }

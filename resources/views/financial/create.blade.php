@@ -67,6 +67,11 @@
                                 <input name="bill_value" type="number" min="1" step="any"
                                        class="form-control" id="bill_value" placeholder="Valor">
                             </div>
+                            <div class="form-group">
+                                <label for="reading">Medição</label>
+                                <input name="reading" type="number" min="1" step="any"
+                                       class="form-control" id="reading" placeholder="Medição">
+                            </div>
                             <label>Upload do Boleto</label>
                             <input name="condo_id" type="hidden" value="{{$condo_id}}">
                             <div class="form-group">

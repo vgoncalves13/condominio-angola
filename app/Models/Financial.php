@@ -20,7 +20,8 @@ class Financial extends Model
         'bill_month',
         'bill_value',
         'bill_path',
-        'bill_type'
+        'bill_type',
+        'reading'
     ];
 
 
@@ -62,7 +63,7 @@ class Financial extends Model
 
     public function residences()
     {
-        return $this->belongsToMany(Residence::class)->withPivot('spent');
+        return $this->belongsToMany(Residence::class)->withPivot(['spent','reading']);
     }
 
     public static function UploadBill(Request $request)
@@ -82,14 +83,7 @@ class Financial extends Model
 //                'bill_path' => $bill_path,
 //                'condo_id' => $request->condo_id,
 //            ])->fill($request->all());
-
-        $financial = Financial::create($request->all());
-        $financial->fill([
-            'bill_path' => $bill_path,
-        ]);
-        $financial->save();
-
-        return $financial;
+        return $bill_path;
     }
 
     public function getFinancialDivision(Financial $financial)
@@ -102,7 +96,19 @@ class Financial extends Model
 
     public function getFinancialIndividual(Financial $financial)
     {
-        $value = $financial->getRawOriginal('bill_value');
-        $finanacial_residence = FinancialResidence::where('financial_id', $financial->id)->get();
+        $bill_value = $financial->getRawOriginal('bill_value');
+        $reading = $financial->reading;
+
+        $bill_value_by_residence = array();
+        foreach($financial->residences as $key => $residence){
+            $percentage = $this->getPercentage($residence->pivot->reading, $reading);
+            $bill_value_by_residence[$key]['residence_id'] = $residence->id;
+            $bill_value_by_residence[$key]['bill_value'] = $percentage * $bill_value / 100;
+        }
+        return $bill_value_by_residence;
+    }
+    public static function getPercentage($value, $total)
+    {
+        return ($value / $total) * 100;
     }
 }

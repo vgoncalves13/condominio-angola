@@ -46,7 +46,6 @@ class CarController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -54,6 +53,7 @@ class CarController extends Controller
         $number_cars = $request->session()->get('number_cars');
         $request->session()->forget('number_cars');
         $this->car->createCar($request, $residence_id, $number_cars);
+
         return redirect()->route('familiars.create');
 
     }

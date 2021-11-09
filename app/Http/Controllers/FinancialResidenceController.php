@@ -10,14 +10,26 @@ class FinancialResidenceController extends Controller
 {
     public function store(FinancialResidenceRequest $request)
     {
+        $total_reading_input=0;
         foreach ($request->residence_id as $key => $value){
-            FinancialResidence::updateOrCreate(
+            $financial_residente = FinancialResidence::updateOrCreate(
                 ['financial_id' => $request->financial_id, 'residence_id' => $key],
-                ['spent' => $value]
+                ['reading' => $value]
             );
+            $total_reading_input = $total_reading_input + $financial_residente->reading;
         }
-        Session::flash('message',__('message.success'));
-        Session::flash('alert-class', 'alert-success');
-        return (redirect(route('financials.details',$request->financial_id)));
+        if ($total_reading_input > $request->reading){
+            Session::flash('message',__('message.error_total_reading'));
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->back();
+        }elseif ($total_reading_input < $request->reading){
+            Session::flash('message',__('message.warning_total_reading'));
+            Session::flash('alert-class', 'alert-warning');
+            return (redirect(route('financials.details',$request->financial_id)));
+        }else{
+            Session::flash('message',__('message.success'));
+            Session::flash('alert-class', 'alert-success');
+            return (redirect(route('financials.details',$request->financial_id)));
+        }
     }
 }

@@ -13,7 +13,7 @@ class FamiliarController extends Controller
 
     function __construct(Familiar $familiar)
     {
-        $this->familiar = new Familiar();
+        $this->familiar = $familiar;
     }
 
        /**
